@@ -1,0 +1,21 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:uat": "cross-env ENVIRONMENT=uat npx playwright test",
+    "test:staging": "cross-env ENVIRONMENT=staging npx playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
+}
