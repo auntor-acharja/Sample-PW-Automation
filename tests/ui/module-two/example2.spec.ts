@@ -4,7 +4,7 @@ import { ProductPage } from "../../../src/pages/productPage";
 import { CommonUtils } from "../../../src/utils/commonUtils";
 import testData from "../../../test-data/testData.json"
 
-test.describe("Login Tests", () => {
+test.describe("Login Tests 2", () => {
   let loginPage: LoginPage;
   let productPage: ProductPage;
 
@@ -13,7 +13,7 @@ test.describe("Login Tests", () => {
     productPage = pageManager.getProductPage();
   });
 
-  test("TC1: Verify login and logout functionality", { tag:'@smoke' }, async ({ login, logout }) => {
+  test("TC2: Verify login and logout functionality", { tag:'@functional' }, async ({ login, logout }) => {
     await login();
     console.log(testData.URL)
     await logout();

@@ -1,6 +1,4 @@
 import { defineConfig,devices } from '@playwright/test';
-
-//export const STORAGE_STATE = path.join(__dirname, 'authentication/.auth/admin.json');
 export default defineConfig({
   testDir: './tests',
   //testMatch:"**/*.spec.ts",
@@ -16,10 +14,6 @@ export default defineConfig({
     headless:process.env.CI ? true : false
   },
   projects: [
-    // {
-    //   name:'setup',
-    //   testMatch:"**/preCondition.setup.js"
-    // },
     // {
     //   name: 'Microsoft Edge',
     //   use: { ...devices['Desktop Edge'], 

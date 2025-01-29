@@ -13,7 +13,7 @@ export class LoginPage extends BasePage{
         this.loginButton =  this.page.locator('#login-button')
     }
 
-    async loginToTheApplication(username:string,pass:string):Promise<void>{
+    async loginToApplication(username:string,pass:string):Promise<void>{
         await this.type(this.username,username)
         await this.type(this.password,pass)
         await this.click(this.loginButton)
