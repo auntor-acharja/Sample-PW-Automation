@@ -1,27 +1,39 @@
 import {config} from "dotenv";
-import { testConfig } from '../../config/testConfig';
 
-export function loadEnvironmentConfig(): void { 
   if (process.env.ENVIROMENT) {
     config({
-      path: `environment/.env.${process.env.ENVIROMENT}`,
+      path: `.env.${process.env.ENVIROMENT}`,
       override: true,
     });
   } else {
     config({
-      path: "environment/.env",
+      path: ".env",
       override: true,
     });
   }
+
+
+  interface EnvironmentData {
+    url: string;
+    credentials: {username: string; password: string;};
 }
 
-export interface EnvironmentSettings {
-    HEADLESS_MODE: boolean;
-  }
-  
-  export function getEnvironmentSettings(): EnvironmentSettings {
+function getEnvironmentData(): EnvironmentData {
+    const url = process.env.URL;
+    const username = process.env.USERNAME;
+    const password = process.env.PASSWORD;
+
+    if (!url || !username || !password) {
+        throw new Error('Missing required environment variables: URL, USERNAME, PASSWORD');
+    }
+
     return {
-      HEADLESS_MODE: process.env.HEADLESS?.toLowerCase() === testConfig.defaultHeadless
+        url,
+        credentials: {
+            username,
+            password
+        },
     };
-  }
-  
+}
+
+export const environment = getEnvironmentData();

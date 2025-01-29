@@ -1,9 +1,5 @@
 import { defineConfig,devices } from '@playwright/test';
-import {loadEnvironmentConfig,getEnvironmentSettings} from "./src/utils/environmentUtils"
-import { testConfig } from './config/testConfig';
 
-loadEnvironmentConfig()
-const { HEADLESS_MODE } = getEnvironmentSettings()
 //export const STORAGE_STATE = path.join(__dirname, 'authentication/.auth/admin.json');
 export default defineConfig({
   testDir: './tests',
@@ -17,8 +13,7 @@ export default defineConfig({
     trace: 'retain-on-failure',
     video: 'retain-on-failure',
     screenshot: 'only-on-failure',
-  //  storageState: STORAGE_STATE,
-    baseURL: testConfig.baseURL,
+    headless:process.env.CI ? true : false
   },
   projects: [
     // {
@@ -35,8 +30,7 @@ export default defineConfig({
 
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'],
-        headless: HEADLESS_MODE
+      use: { ...devices['Desktop Chrome']
        },
     },
 

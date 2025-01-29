@@ -1,14 +1,16 @@
 import { Page } from "@playwright/test"
+import { logger } from "../utils/logger";
 
-export class ClipboardUtils {
+export class ClipboardHelper {
+    private page: Page;
 
-    constructor(readonly page: Page) {
+    constructor(page: Page) {
         this.page = page;
     }
 
     async initializePermissions(): Promise<void> {
         await this.page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
-        console.log("Clipboard permissions initialized.");
+        logger.info("Clipboard permissions initialized.")
     }
 
     async copyTextToClipboard(text: string): Promise<void> {
@@ -17,7 +19,7 @@ export class ClipboardUtils {
                 navigator.clipboard.writeText(clipboardText);
             }, text);
         } catch (error) {
-            console.log(`Error copying text '${text}' to clipboard: ${error}`);
+            logger.error(`Error copying text '${text}' to clipboard: ${error}`)
             throw error;
         }
     }
@@ -29,7 +31,7 @@ export class ClipboardUtils {
             });
             return clipboardText;
         } catch (error) {
-            console.log(`Error retrieving text from clipboard: ${error}`);
+            logger.error(`Error retrieving text from clipboard: ${error}`);
             throw error;
         }
     }
@@ -40,7 +42,7 @@ export class ClipboardUtils {
                 navigator.clipboard.writeText('');
             });
         } catch (error) {
-            console.log(`Error clearing clipboard: ${error}`);
+            logger.error(`Error clearing clipboard: ${error}`);
             throw error;
         }
     }
