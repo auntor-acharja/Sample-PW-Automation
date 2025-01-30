@@ -8,7 +8,6 @@ import { logger } from "../utils/logger";
 type FixtureType = {
   pageManager: PageManager;
   login: () => Promise<void>;
-  logout: () => Promise<void>;
   fileHelper: FileHelper;
   clipboardHelper: ClipboardHelper;
 };
@@ -33,18 +32,6 @@ export const test = base.extend<FixtureType>({
       }
     };
     await use(loginApplication);
-  },
-  logout: async ({ pageManager }, use) => {
-    const logoutFromApplication = async () => {
-      try{
-        await pageManager.getMenu().logout();
-      }catch (error){
-        logger.error("Logout from the application failed", error);
-      }
-  
-    };
-
-    await use(logoutFromApplication);
   },
   fileHelper: async ({ page }, use) => {
     await use(new FileHelper(page));

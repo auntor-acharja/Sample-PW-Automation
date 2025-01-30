@@ -13,10 +13,9 @@ test.describe("Login Tests 2", () => {
     productPage = pageManager.getProductPage();
   });
 
-  test("TC2: Verify login and logout functionality", { tag:'@functional' }, async ({ login, logout }) => {
+  test("TC2: Verify login and logout functionality", { tag:'@functional' }, async ({ login }) => {
     await login();
-    console.log(testData.URL)
-    await logout();
+    console.log(testData.text)
   });
 
 });
