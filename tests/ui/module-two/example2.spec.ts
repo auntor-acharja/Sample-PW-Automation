@@ -2,7 +2,7 @@ import { test } from "../../../src/fixtures/baseFixture";
 import { LoginPage } from "../../../src/pages/loginPage";
 import { ProductPage } from "../../../src/pages/productPage";
 import { CommonUtils } from "../../../src/utils/commonUtils";
-import testData from "../../../test-data/testData.json"
+//import testData from "../../../test-data/testData.json";
 
 test.describe("Login Tests 2", () => {
   let loginPage: LoginPage;
@@ -13,9 +13,8 @@ test.describe("Login Tests 2", () => {
     productPage = pageManager.getProductPage();
   });
 
-  test("TC2: Verify login and logout functionality", { tag:'@functional' }, async ({ login }) => {
+  test("TC2: Verify login and logout functionality", { tag: "@functional" }, async ({ login }) => {
     await login();
-    console.log(testData.text)
+    //console.log(testData.text);
   });
-
 });

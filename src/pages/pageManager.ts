@@ -4,36 +4,37 @@ import { ProductPage } from "./productPage";
 import { Menu } from "./components/menu";
 
 export class PageManager {
-  private context:BrowserContext;
+  private context: BrowserContext;
   private page: Page;
-  private homePage: LoginPage;
+  private loginPage: LoginPage;
   private productPage: ProductPage;
   private menu: Menu;
 
-  constructor(page: Page,context:BrowserContext) {
+  constructor(page: Page, context: BrowserContext) {
     this.page = page;
     this.context = context;
-    this.homePage = new LoginPage(page);
+    this.loginPage = new LoginPage(page);
+    this.productPage = new ProductPage(page);
     this.menu = new Menu(page);
   }
 
   getLoginPage(): LoginPage {
-    return this.homePage;
+    return this.loginPage;
   }
 
   getProductPage(): ProductPage {
     return this.productPage;
   }
 
-  getPage():Page {
+  getPage(): Page {
     return this.page;
   }
 
-  getContext():BrowserContext {
+  getContext(): BrowserContext {
     return this.context;
   }
 
-  getMenu():Menu {
+  getMenu(): Menu {
     return this.menu;
   }
 }

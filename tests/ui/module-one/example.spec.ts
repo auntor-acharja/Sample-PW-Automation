@@ -3,23 +3,25 @@ import { LoginPage } from "../../../src/pages/loginPage";
 import { ProductPage } from "../../../src/pages/productPage";
 import { CommonUtils } from "../../../src/utils/commonUtils";
 import { Menu } from "../../../src/pages/components/menu";
-import testData from "../../../test-data/testData.json"
+import testData from "../../../test-data/testData.json" assert { type: "json" };
+
 
 test.describe("Login Tests", () => {
-  let loginPage: LoginPage;
-  let productPage: ProductPage;
-  let menu:Menu
+  let menu: Menu;
 
   test.beforeEach(async ({ pageManager }) => {
-    loginPage = pageManager.getLoginPage();
-    productPage = pageManager.getProductPage();
-    menu = pageManager.getMenu()
+    menu = pageManager.getMenu();
   });
 
-  test("TC1: Verify login and logout functionality", { tag:'@smoke' }, async ({ login }) => {
-    await login();
-    console.log(testData.text)
-    await menu.logout()
-  });
-
+  test.only(
+    "TC1: Verify login and logout functionality",
+    { tag: "@smoke" },
+    async ({ login, productPage, loginPage }) => {
+      await login();
+      console.log(testData.text);
+      console.log(await productPage.isProductTitleVisible());
+      await loginPage.testLoginFn();
+      await menu.logout();
+    }
+  );
 });

@@ -1,22 +1,21 @@
-import { Locator, Page } from "@playwright/test"
-import { BasePage } from '../basePage'
+import { Locator, Page } from "@playwright/test";
+import { BasePage } from "../basePage";
 
-export class Menu extends BasePage{
-    private menuButton:Locator
-    private logoutLink:Locator
- 
-    constructor(page:Page){
-        super(page)
-        this.menuButton =  this.page.locator('#react-burger-menu-btn')
-        this.logoutLink =  this.page.locator('#logout_sidebar_link')
-    }
+export class Menu extends BasePage {
+  private menuButton: Locator;
+  private logoutLink: Locator;
 
-    async openMenu():Promise<void>{
-        await this.click(this.menuButton)
-    }
-    async logout():Promise<void>{
-        await this.openMenu()
-        await this.click(this.logoutLink)
-    }
+  constructor(page: Page) {
+    super(page);
+    this.menuButton = this.page.locator("#react-burger-menu-btn");
+    this.logoutLink = this.page.locator("#logout_sidebar_link");
+  }
 
+  async openMenu(): Promise<void> {
+    await this.click(this.menuButton);
+  }
+  async logout(): Promise<void> {
+    await this.openMenu();
+    await this.click(this.logoutLink);
+  }
 }

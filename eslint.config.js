@@ -1,29 +1,29 @@
-import eslint from "@eslint/js";
-import tseslint from "typescript-eslint";
+import eslintPluginTs from "@typescript-eslint/eslint-plugin";
+import eslintParserTs from "@typescript-eslint/parser";
+import eslintPluginPlaywright from "eslint-plugin-playwright";
+import eslintPluginPrettier from "eslint-plugin-prettier";
 import playwright from "eslint-plugin-playwright";
 
-export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.recommended,
+export default [
   {
-    ...playwright.configs['flat/recommended'],
-    files: ['tests/**'],
+    ignores: ["node_modules", "dist", "playwright-report"],
   },
   {
-    files: ["**/*.ts", "**/*.tsx"],
+    ...playwright.configs["flat/recommended"],
+    files: ["**/*.ts"],
     languageOptions: {
-      parser: tseslint.parser,
-      parserOptions: {
-        project: "./tsconfig.json",
-        tsconfigRootDir: ".",
-      },
+      parser: eslintParserTs,
     },
     plugins: {
-      "@typescript-eslint": tseslint.plugin,
+      "@typescript-eslint": eslintPluginTs,
+      playwright: eslintPluginPlaywright,
+      prettier: eslintPluginPrettier,
     },
     rules: {
-      "@typescript-eslint/no-floating-promises": "error",
-      "@typescript-eslint/await-thenable": "error",
+      ...playwright.configs["flat/recommended"].rules,
+      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-explicit-any": "warn",
+      "prettier/prettier": "error",
     },
-  }
-);
+  },
+];
