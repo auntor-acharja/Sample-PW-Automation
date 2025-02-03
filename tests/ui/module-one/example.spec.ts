@@ -5,7 +5,6 @@ import { CommonUtils } from "../../../src/utils/commonUtils";
 import { Menu } from "../../../src/pages/components/menu";
 import testData from "../../../test-data/testData.json" assert { type: "json" };
 
-
 test.describe("Login Tests", () => {
   let menu: Menu;
 
