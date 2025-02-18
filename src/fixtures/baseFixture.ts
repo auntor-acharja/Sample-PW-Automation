@@ -11,10 +11,10 @@ type FixtureType = {
   pageManager: PageManager;
   productPage: ProductPage;
   loginPage: LoginPage;
-  menu:Menu;
+  menu: Menu;
   login: void;
-  network:void;
-  saveScreenshot: (path: string) => Promise<void>
+  network: void;
+  saveScreenshot: (path: string) => Promise<void>;
 };
 
 export const test = base.extend<FixtureType>({
@@ -27,19 +27,19 @@ export const test = base.extend<FixtureType>({
   loginPage: async ({ page }, use) => {
     await use(new LoginPage(page));
   },
-  menu: async ({ pageManager }, use) => { 
+  menu: async ({ pageManager }, use) => {
     await use(pageManager.getMenu());
   },
   login: async ({ pageManager }, use) => {
-      try {
-        await pageManager.getPage().goto(environment.url);
-        await pageManager
-          .getLoginPage()
-          .loginToApplication(environment.credentials.username, environment.credentials.password);
-      } catch (error) {
-        logger.error("Initial login process failed:", error);
-        throw error;
-      }
+    try {
+      await pageManager.getPage().goto(environment.url);
+      await pageManager
+        .getLoginPage()
+        .loginToApplication(environment.credentials.username, environment.credentials.password);
+    } catch (error) {
+      logger.error("Initial login process failed:", error);
+      throw error;
+    }
 
     await use();
   },
@@ -47,8 +47,8 @@ export const test = base.extend<FixtureType>({
     page.on("response", (response) => {
       expect.soft(response.status(), `Failed for URL: ${response.url()}`).toBeLessThan(404);
     });
-  
-    await use(); 
+
+    await use();
   },
   saveScreenshot: async ({ page }, use) => {
     const capture = async (path: string) => {
@@ -57,8 +57,6 @@ export const test = base.extend<FixtureType>({
     };
     await use(capture);
   },
-
 });
-
 
 export { expect } from "@playwright/test";

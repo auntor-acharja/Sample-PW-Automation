@@ -6,16 +6,18 @@ export class BasePage {
   private readonly TIME_OUT = 15000;
   protected page: Page;
 
+
   constructor(page: Page) {
     this.page = page;
+
   }
 
   async navigateTo(url: string): Promise<void> {
     try {
       await this.page.goto(url);
       logger.info(`Navigated to URL: ${url}`);
-      await waitForLoadState(this.page,"networkidle");
-      await waitForLoadState(this.page,'load');
+      await waitForLoadState(this.page, "networkidle");
+      await waitForLoadState(this.page, "load");
     } catch (error) {
       logger.error(`Failed to navigate to URL: ${url}`, error);
       throw error;
@@ -26,8 +28,8 @@ export class BasePage {
     try {
       await this.page.goBack();
       logger.info(`Navigated back`);
-      await waitForLoadState(this.page,"networkidle");
-      await waitForLoadState(this.page,'load');
+      await waitForLoadState(this.page, "networkidle");
+      await waitForLoadState(this.page, "load");
     } catch (error) {
       logger.error(`Failed to navigate back`, error);
       throw error;
@@ -38,8 +40,8 @@ export class BasePage {
     try {
       await this.page.goForward();
       logger.info(`Navigated forward`);
-      await waitForLoadState(this.page,"networkidle");
-      await waitForLoadState(this.page,'load');
+      await waitForLoadState(this.page, "networkidle");
+      await waitForLoadState(this.page, "load");
     } catch (error) {
       logger.error(`Failed to navigate forward`, error);
       throw error;
@@ -62,8 +64,8 @@ export class BasePage {
       await this.waitForVisible(locator);
       await locator.click();
       logger.info(`Clicked element: ${locator}`);
-      await waitForLoadState(this.page,"networkidle");
-      await waitForLoadState(this.page,'load');
+      await waitForLoadState(this.page, "networkidle");
+      await waitForLoadState(this.page, "load");
     } catch (error) {
       logger.error(`Failed to click element: ${locator}`, error);
       throw error;

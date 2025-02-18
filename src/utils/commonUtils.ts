@@ -29,3 +29,4 @@ export async function captureScreenshot(page: Page, screenshotPath: string): Pro
     logger.error("Error capturing screenshot:", error);
   }
 }
+
