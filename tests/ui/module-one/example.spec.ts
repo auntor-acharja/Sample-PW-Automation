@@ -1,26 +1,17 @@
-import { test } from "../../../src/fixtures/baseFixture";
-import { LoginPage } from "../../../src/pages/loginPage";
-import { ProductPage } from "../../../src/pages/productPage";
-import { CommonUtils } from "../../../src/utils/commonUtils";
-import { Menu } from "../../../src/pages/components/menu";
+import { test,expect } from "../../../src/fixtures/baseFixture";
 import testData from "../../../test-data/testData.json" assert { type: "json" };
 
 test.describe("Login Tests", () => {
-  let menu: Menu;
-
-  test.beforeEach(async ({ pageManager }) => {
-    menu = pageManager.getMenu();
+  test.beforeEach(async ({ page,network,login }) => {
+    console.log("Running before each test...");
   });
-
   test.only(
     "TC1: Verify login and logout functionality",
     { tag: "@smoke" },
-    async ({ login, productPage, loginPage }) => {
-      await login();
-      console.log(testData.text);
-      console.log(await productPage.isProductTitleVisible());
+    async ({ productPage, loginPage, menu, saveScreenshot }) => {
       await loginPage.testLoginFn();
-      await menu.logout();
+      await saveScreenshot("screenshots/login.png");
+      await menu.logout()
     }
   );
 });

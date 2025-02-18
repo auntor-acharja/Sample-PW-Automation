@@ -1,5 +1,6 @@
 import { Page, Locator } from "@playwright/test";
 import { logger } from "../utils/logger";
+import { waitForLoadState } from "../helpers/waitHelper";
 
 export class BasePage {
   private readonly TIME_OUT = 15000;
@@ -13,7 +14,8 @@ export class BasePage {
     try {
       await this.page.goto(url);
       logger.info(`Navigated to URL: ${url}`);
-      await this.page.waitForLoadState("networkidle");
+      await waitForLoadState(this.page,"networkidle");
+      await waitForLoadState(this.page,'load');
     } catch (error) {
       logger.error(`Failed to navigate to URL: ${url}`, error);
       throw error;
@@ -24,7 +26,8 @@ export class BasePage {
     try {
       await this.page.goBack();
       logger.info(`Navigated back`);
-      await this.page.waitForLoadState("networkidle");
+      await waitForLoadState(this.page,"networkidle");
+      await waitForLoadState(this.page,'load');
     } catch (error) {
       logger.error(`Failed to navigate back`, error);
       throw error;
@@ -35,7 +38,8 @@ export class BasePage {
     try {
       await this.page.goForward();
       logger.info(`Navigated forward`);
-      await this.page.waitForLoadState("networkidle");
+      await waitForLoadState(this.page,"networkidle");
+      await waitForLoadState(this.page,'load');
     } catch (error) {
       logger.error(`Failed to navigate forward`, error);
       throw error;
@@ -58,7 +62,8 @@ export class BasePage {
       await this.waitForVisible(locator);
       await locator.click();
       logger.info(`Clicked element: ${locator}`);
-      await this.page.waitForLoadState("networkidle");
+      await waitForLoadState(this.page,"networkidle");
+      await waitForLoadState(this.page,'load');
     } catch (error) {
       logger.error(`Failed to click element: ${locator}`, error);
       throw error;

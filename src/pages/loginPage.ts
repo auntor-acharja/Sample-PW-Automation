@@ -1,5 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 import { BasePage } from "./basePage";
+import { waitForLoadState } from "../helpers/waitHelper";
 
 export class LoginPage extends BasePage {
   private username: Locator;
@@ -21,5 +22,6 @@ export class LoginPage extends BasePage {
 
   async testLoginFn() {
     console.log("This is test function");
+    await waitForLoadState(this.page,'load')
   }
 }
