@@ -36,6 +36,7 @@ export const test = base.extend<FixtureType>({
       await pageManager
         .getLoginPage()
         .loginToApplication(environment.credentials.username, environment.credentials.password);
+        console.log(`This Console Log just for Github action Environemnt variable testing ${environment.credentials.username}::::: ${environment.credentials.password}`)
     } catch (error) {
       logger.error("Initial login process failed:", error);
       throw error;

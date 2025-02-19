@@ -1,8 +1,19 @@
 name: Playwright Tests
 
 on:
+  workflow_dispatch:
+    inputs:
+      ENVIRONMENT:
+        description: "Select the environment"
+        required: false
+        default: "staging"
+        type: choice
+        options:
+          - staging
+          - uat
   push:
-    branches: [main, master]
+    branches:
+      - main
 
 # Give the workflow permission to deploy the Pages site
 permissions:
@@ -14,6 +25,7 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.ENVIRONMENT }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,6 +34,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
+      - name: Generate .env file
+        run: |
+          echo "URL=${{ secrets.URL }}" >> .env
+          echo "USERNAME=${{ secrets.USERNAME }}" >> .env
+          echo "PASSWORD=\"${{ secrets.PASSWORD }}\"" >> .env
 
       - name: Install dependencies
         run: npm ci
@@ -30,6 +47,8 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
+        env:
+          ENVIRONMENT: ${{ github.event.inputs.ENVIRONMENT }}
         run: npx playwright test --reporter=html
 
       - name: Upload Playwright HTML Report
