@@ -58,4 +58,3 @@ deploy:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
-      run: echo "Playwright Report deployed at - ${{ steps.deployment.outputs.page_url }}"
