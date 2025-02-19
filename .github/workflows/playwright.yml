@@ -65,6 +65,7 @@ jobs:
 
   # Deploy Playwright report to GitHub Pages
   deploy:
+    if: always()
     needs: test
     environment:
       name: github-pages
