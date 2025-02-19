@@ -10,7 +10,7 @@ permissions:
   id-token: write 
 
 jobs:
-  Test:
+  test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -46,7 +46,7 @@ jobs:
           path: playwright-report/
 
   # Deploy Playwright report  to GitHub Pages
-  Deploy Report:
+  deploy:
     needs: upload-pages
     runs-on: ubuntu-latest
     environment:
