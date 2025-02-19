@@ -7,9 +7,9 @@ on:
     branches: [main, master]
 
 permissions:
-  contents: write   # Required for pushing changes
-  pages: write      # Required for deploying GitHub Pages
-  id-token: write   # Required for authentication with GitHub Pages
+  contents: write   
+  pages: write      
+  id-token: write  
 
 jobs:
   test:
@@ -33,18 +33,19 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test --reporter=html
 
+      - name: Debug Check if report exists
+        run: ls -R playwright-report/ || echo "Report folder missing!"
+
       - name: Upload Playwright HTML Report
         uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 3
 
   deploy:
     needs: test
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'push' }}  
 
     steps:
       - name: Setup Pages
@@ -55,6 +56,9 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report/
+
+      - name: Debug Check if downloaded report exists
+        run: ls -R playwright-report/ || echo "Downloaded report missing!"
 
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3  
