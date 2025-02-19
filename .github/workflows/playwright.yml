@@ -56,5 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy to GitHub Pages
-      uses: actions/deploy-pages@v4  
+      uses: actions/deploy-pages@v4
+
+    - name: Show Deployment URL 
       run: echo "Playwright Report deployed at - ${{ steps.deployment.outputs.page_url }}"
