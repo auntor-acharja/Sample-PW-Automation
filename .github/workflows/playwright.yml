@@ -3,11 +3,11 @@ name: Playwright Tests
 on:
   push:
     branches: [main, master]
-    
+
 permissions:
-  contents: write   # Required for pushing changes
-  pages: write      # Required for deploying GitHub Pages
-  id-token: write   # Required for authentication with GitHub Pages
+  contents: write  
+  pages: write      
+  id-token: write 
 
 jobs:
   test:
@@ -70,8 +70,5 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Show Deployment URL in Logs
-        run: echo "Playwright Report deployed at ${{ steps.deployment.outputs.page_url }}"
-
-      - name: Output Deployment URL
-        run: echo "::notice title=Playwright Report::${{ steps.deployment.outputs.page_url }}"
+      - name: Show Deployment URL in UI
+        run: echo "###Playwright Report is Live![View Report](${{ steps.deployment.outputs.page_url }})" >> $GITHUB_STEP_SUMMARY
