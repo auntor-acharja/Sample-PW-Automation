@@ -25,7 +25,7 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.ENVIRONMENT }}
+    environment: ${{ github.event.inputs.ENVIRONMENT || 'staging' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
