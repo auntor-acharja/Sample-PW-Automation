@@ -71,4 +71,4 @@ jobs:
         uses: actions/deploy-pages@v4
 
       - name: Show Deployment URL in UI
-        run: echo "###Playwright Report is Live![View Report](${{ steps.deployment.outputs.page_url }})" >> $GITHUB_STEP_SUMMARY
+        run: echo "[View Report](${{ steps.deployment.outputs.page_url }})" >> $GITHUB_STEP_SUMMARY
