@@ -25,8 +25,6 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.50.1-noble
     environment: ${{ github.event.inputs.ENVIRONMENT || 'staging' }}
     steps:
       - name: Checkout code
@@ -42,6 +40,22 @@ jobs:
           echo "USERNAME=${{ secrets.USERNAME }}" >> .env
           echo "PASSWORD=\"${{ secrets.PASSWORD }}\"" >> .env
 
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Cache Playwright Browsers
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-browsers-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-browsers-
+            
       - name: Install dependencies
         run: npm ci
 
