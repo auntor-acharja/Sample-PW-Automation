@@ -55,6 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy test report to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
 
       - name: Show Report Page URL in Pipeline Summary
