@@ -58,5 +58,5 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Show Report Page URL in Pipeline Summary
-        run: echo "[View Live Test Report](${{ steps.deployment.outputs.page_url }})" >> $GITHUB_STEP_SUMMARY
+      # - name: Show Report Page URL in Pipeline Summary
+      #   run: echo "[View Live Test Report](${{ steps.deployment.outputs.page_url }})" >> $GITHUB_STEP_SUMMARY
