@@ -1,0 +1,3 @@
+I’ve completed the test cases for DocAuto. Then, I worked on the base Playwright project, 
+I have re-test one melody ticket AI-648 but the issue still exists.
+Now i am working on GitHub action pages to publish report 
