@@ -39,19 +39,19 @@ jobs:
           path: playwright-report/
 
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: playwright-report/
 
-  # Deploy Playwright report  to GitHub Pages
+  # Deploy Playwright report to GitHub Pages
   deploy:
     needs: test
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Deploy test report to GitHub Pages
