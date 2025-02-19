@@ -995,3 +995,34 @@
 {"level":"info","message":"Load state achieved: networkidle"}
 {"level":"info","message":"Waiting for load state: load"}
 {"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Waiting for element: locator('#user-name') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Typed \"standard_user\" into element: locator('#user-name')"}
+{"level":"info","message":"Waiting for element: locator('#password') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Typed \"secret_sauce\" into element: locator('#password')"}
+{"level":"info","message":"Waiting for element: locator('#login-button') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Clicked element: locator('#login-button')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Capturing screenshot: screenshots/login.png"}
+{"level":"info","message":"Screenshot saved at: screenshots/login.png"}
+{"level":"info","message":"Waiting for element: locator('#react-burger-menu-btn') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Clicked element: locator('#react-burger-menu-btn')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Waiting for element: locator('#logout_sidebar_link') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Clicked element: locator('#logout_sidebar_link')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}

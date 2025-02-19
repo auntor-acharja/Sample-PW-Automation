@@ -6,7 +6,7 @@ test.describe("Login Tests", () => {
   test.beforeEach(async ({ page,network,login }) => {
     console.log("Running before each test...");
   });
-  test.only(
+  test(
     "TC1: Verify login and logout functionality",
     { tag: "@smoke" },
     async ({ productPage, loginPage, menu, saveScreenshot }) => {
