@@ -22,8 +22,8 @@ on:
         default: "No"
         type: choice
         options:
-          - Yes
-          - No
+          - "Yes"
+          - "No"
 
 
   push:
