@@ -2,9 +2,9 @@ name: Playwright Tests
 
 on:
 
-# Run the workflow on a schedule.
-  schedule:
-    - cron: '38 6 * * *'
+# Run the workflow on a schedule. Use the following code to run workflow in a specific time
+  # schedule:
+  #   - cron: '38 6 * * *'
   workflow_dispatch:
     inputs:
       ENVIRONMENT:
@@ -15,6 +15,17 @@ on:
         options:
           - staging
           - uat
+
+      RUN_LAST_FAILED_TEST:
+        description: "Do you want to run only the last failed test?"
+        required: false
+        default: "No"
+        type: choice
+        options:
+          - Yes
+          - No
+
+
   push:
     branches:
       - main
@@ -70,8 +81,17 @@ jobs:
       # - name: Install Playwright Browsers
       #   run: npx playwright install --with-deps
 
+      - name: Setup the Test Command
+        id: test-command
+        run: |
+          if [[ "${{ github.event.inputs.RUN_LAST_FAILED_TEST }}" == "Yes" ]]; then
+            echo "COMMAND=npx playwright test --last-failed" >> $GITHUB_ENV
+          else
+            echo "COMMAND=npx playwright test" >> $GITHUB_ENV
+          fi
+
       - name: Run Playwright tests
-        run: npx playwright test --reporter=html
+        run: $COMMAND
 
       - name: Upload Playwright HTML Report
         if: always()
