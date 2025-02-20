@@ -16,7 +16,6 @@ This is a base Playwright project for automated testing. It includes a structure
 Ensure you have the following installed:
 
 - [Node.js](https://nodejs.org/en/download/) (18 or higher)
-- [npm](https://www.npmjs.com/get-npm) (bundled with Node.js)
 
 ## Installation
 
@@ -36,9 +35,8 @@ Ensure you have the following installed:
 ## Project Structure
 
 ```
-.
-/playwright-project
 
+/Sample-PW-Automation
 ├── /src
 │   ├── /enums
 │   │   ├── apiConstants.enum.ts
@@ -125,12 +123,11 @@ PASSWORD=<your_password>
 
 - Tests are executed automatically via **GitHub Actions**
 - Supports caching and optimized test execution for faster runs
-- Generates detailed **HTML reports** for debugging and analysis
 
 ## Configuration
 
 - Managed in `playwright.config.ts`
-- Supports **parallel execution, retries, and environment-based test runs**
+- Supports parallel execution, retries, and environment-based test runs
 - Screenshots, videos, and traces are captured for failed tests
 
 ## Reporting
