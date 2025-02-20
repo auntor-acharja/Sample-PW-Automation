@@ -42,6 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.49.1-noble   # If we update playwright version in project, the PW docker image version need to update accordingly.
+    
     environment: ${{ github.event.inputs.ENVIRONMENT || 'staging' }}
     steps:
       - name: Checkout code
@@ -51,6 +52,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
+          
       - name: Generate .env file
         run: |
           echo "URL=${{ secrets.URL }}" >> .env

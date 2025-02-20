@@ -8,8 +8,8 @@ export class LoginPage extends BasePage {
   private username: Locator;
   private loginButton: Locator;
   private password: Locator;
-  dialogComponent: DialogComponent;
-  navbarComponent: NavbarComponent;
+  private dialogComponent: DialogComponent;
+  private navbarComponent: NavbarComponent;
 
 
   constructor(page: Page) {
@@ -28,8 +28,9 @@ export class LoginPage extends BasePage {
   }
 
   async testLoginFn() {
-    await this.navbarComponent.clickHomePage()
-    console.log("This is test function");
+    await this.navbarComponent.clickHomePage() // For this page file we use navbarComponent just for example
+    await this.dialogComponent.confirm() // For this page file we use dialogComponent just for example
+    console.log("This is a test function");
     await waitForLoadState(this.page,'load')
   }
 }

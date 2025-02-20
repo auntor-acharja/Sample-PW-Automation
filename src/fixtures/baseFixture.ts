@@ -1,4 +1,4 @@
-import { test as base, expect, Page } from "@playwright/test";
+import { test as base, expect } from "@playwright/test";
 import { PageManager } from "../pages/pageManager";
 import { environment } from "../utils/environmentUtils";
 import { logger } from "../utils/logger";
@@ -21,10 +21,10 @@ export const test = base.extend<FixtureType>({
   pageManager: async ({ page, context }, use) => {
     await use(new PageManager(page, context));
   },
-  productPage: async ({ pageManager }, use) => {
+  productPage: async ({ pageManager }, use) => { // That's a way we can get the pages from pageManager and pass as fixture
     await use(pageManager.getProductPage());
   },
-  loginPage: async ({ page }, use) => {
+  loginPage: async ({ page }, use) => {  // That's a way we can create pageObject and pass as fixture directly, In this case we don't need any pageManager class
     await use(new LoginPage(page));
   },
   menu: async ({ pageManager }, use) => {
@@ -46,6 +46,7 @@ export const test = base.extend<FixtureType>({
   },
   network: async ({ page }, use) => {
     page.on("response", (response) => {
+      logger.info(`Response URL: ${response.url()} - Status: ${response.status()}`);
       expect.soft(response.status(), `Failed for URL: ${response.url()}`).toBeLessThan(404);
     });
 
