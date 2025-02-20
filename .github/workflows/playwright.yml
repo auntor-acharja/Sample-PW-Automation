@@ -84,7 +84,7 @@ jobs:
       - name: Setup the Test Command
         id: test-command
         run: |
-          if [[ "${{ github.event.inputs.RUN_LAST_FAILED_TEST }}" == "Yes" ]]; then
+          if [ "${{ github.event.inputs.RUN_LAST_FAILED_TEST }}" == "Yes" ]; then
             echo "COMMAND=npx playwright test --last-failed" >> $GITHUB_ENV
           else
             echo "COMMAND=npx playwright test" >> $GITHUB_ENV
