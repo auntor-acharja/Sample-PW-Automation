@@ -1,6 +1,6 @@
 import { test as base, expect } from "@playwright/test";
 import { PageManager } from "../pages/pageManager";
-import { environment } from "../utils/environmentUtils";
+import { environment } from "../config/config";
 import { logger } from "../utils/logger";
 import { ProductPage } from "../pages/productPage";
 import { LoginPage } from "../pages/loginPage";

@@ -64,50 +64,61 @@ export async function waitForLoadState(
 
 export async function waitForRequest(
   page: Page,
-  url: string,
+  partialUrl: string,
   timeout: number = TIME_OUT
 ): Promise<Request> {
   try {
-    logger.info(`Waiting for request: ${url}`);
-    const request = await page.waitForRequest(url, { timeout });
-    logger.info(`Request received: ${url}`);
+    logger.info(`Waiting for request containing: ${partialUrl}`);
+    
+    const request = await page.waitForRequest(request => 
+      request.url().includes(partialUrl), 
+      { timeout }
+    );
+
+    logger.info(`Request received: ${request.url()}`);
     return request;
   } catch (error) {
-    logger.error(`Error waiting for request: ${url} - ${error}`);
+    logger.error(`Error waiting for request containing: ${partialUrl} - ${error}`);
     throw error;
   }
 }
 
 export async function waitForResponse(
   page: Page,
-  url: string,
+  partialUrl: string,
   timeout: number = TIME_OUT
 ): Promise<Response> {
   try {
-    logger.info(`Waiting for response: ${url}`);
-    const response = await page.waitForResponse(url, { timeout });
-    logger.info(`Response received: ${url}`);
+    logger.info(`Waiting for response containing: ${partialUrl}`);
+    
+    const response = await page.waitForResponse(response => 
+      response.url().includes(partialUrl), 
+      { timeout }
+    );
+
+    logger.info(`Response received: ${response.url()}`);
     return response;
   } catch (error) {
-    logger.error(`Error waiting for response: ${url} - ${error}`);
+    logger.error(`Error waiting for response containing: ${partialUrl} - ${error}`);
     throw error;
   }
 }
 
 export async function waitForURL(
   page: Page,
-  url: string | RegExp,
+  partialUrl: string,
   timeout: number = TIME_OUT
 ): Promise<void> {
   try {
-    logger.info(`Waiting for URL: ${url}`);
-    await page.waitForURL(url, { timeout });
-    logger.info(`URL loaded: ${url}`);
+    logger.info(`Waiting for URL containing: ${partialUrl}`);
+    await page.waitForURL(url => url.toString().includes(partialUrl), { timeout });
+    logger.info(`URL loaded containing: ${partialUrl}`);
   } catch (error) {
-    logger.error(`Error waiting for URL: ${url} - ${error}`);
+    logger.error(`Error waiting for URL containing: ${partialUrl} - ${error}`);
     throw error;
   }
 }
+
 
 export async function waitForLocator(
   locator: Locator,
