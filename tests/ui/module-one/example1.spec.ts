@@ -10,6 +10,7 @@ test.describe("Example 1 Tests", () => {
     "TC1: Verify login and logout functionality",
     { tag: "@smoke" },
     async ({ loginPage, menu, saveScreenshot }) => {
+
       await loginPage.testLoginFn();
       await saveScreenshot("screenshots/login.png");
       console.log(generateRandomString("app"));
