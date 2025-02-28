@@ -1,15 +1,11 @@
 import { test as base, expect } from "@playwright/test";
-import { PageManager } from "../pages/pageManager";
 import { environment } from "../config/config";
 import { logger } from "../utils/logger";
-import { ProductPage } from "../pages/productPage";
 import { LoginPage } from "../pages/loginPage";
 import { Menu } from "../pages/components/menu";
 import { captureScreenshot } from "../utils/commonUtils";
 
 type FixtureType = {
-  pageManager: PageManager;
-  productPage: ProductPage;
   loginPage: LoginPage;
   menu: Menu;
   login: void;
@@ -18,25 +14,17 @@ type FixtureType = {
 };
 
 export const test = base.extend<FixtureType>({
-  pageManager: async ({ page, context }, use) => {
-    await use(new PageManager(page, context));
-  },
-  productPage: async ({ pageManager }, use) => { // That's a way we can get the pages from pageManager and pass as fixture
-    await use(pageManager.getProductPage());
-  },
-  loginPage: async ({ page }, use) => {  // That's a way we can create pageObject and pass as fixture directly, In this case we don't need any pageManager class
+  loginPage: async ({ page }, use) => { 
     await use(new LoginPage(page));
   },
-  menu: async ({ pageManager }, use) => {
-    await use(pageManager.getMenu());
+  menu: async ({ page }, use) => {
+    await use(new Menu(page));
   },
-  login: async ({ pageManager }, use) => {
+  login: async ({ loginPage,page }, use) => {
     try {
-      await pageManager.getPage().goto(environment.url);
-      await pageManager
-        .getLoginPage()
+      await page.goto(environment.url);
+      await loginPage
         .loginToApplication(environment.credentials.username, environment.credentials.password);
-        console.log(`This Console Log just for Github action Environemnt variable testing ${environment.credentials.username}::::: ${environment.credentials.password}`)
     } catch (error) {
       logger.error("Initial login process failed:", error);
       throw error;

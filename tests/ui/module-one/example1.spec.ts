@@ -1,4 +1,4 @@
-import { test, expect } from "../../../src/fixtures/baseFixture";
+import { test } from "../../../src/fixtures/baseFixture";
 import testData from "../../../test-data/testData.json" assert { type: "json" };
 import { generateRandomString } from "../../../src/utils/randomUtils";
 
