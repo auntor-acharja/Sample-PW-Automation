@@ -1026,3 +1026,263 @@
 {"level":"info","message":"Load state achieved: networkidle"}
 {"level":"info","message":"Waiting for load state: load"}
 {"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/ - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/css/main.f6c64be5.chunk.css - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/js/2.84a5cbf3.chunk.js - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/js/main.018d2d1e.chunk.js - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500 - Status: 200"}
+{"level":"info","message":"Response URL: https://events.backtrace.io/api/unique-events/submit?universe=UNIVERSE&token=TOKEN - Status: 401"}
+{"level":"info","message":"Response URL: https://fonts.gstatic.com/s/dmsans/v15/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2 - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.gstatic.com/s/dmmono/v14/aFTU7PB1QTsUX8KYthqQBA.woff2 - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.gstatic.com/s/dmmono/v14/aFTR7PB1QTsUX8KYvumzEYOtbQ.woff2 - Status: 200"}
+{"level":"info","message":"Waiting for element: locator('#user-name') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Typed \"standard_user\" into element: locator('#user-name')"}
+{"level":"info","message":"Waiting for element: locator('#password') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Typed \"secret_sauce\" into element: locator('#password')"}
+{"level":"info","message":"Waiting for element: locator('#login-button') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Clicked element: locator('#login-button')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/arrow3x.4b825b78.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/menu3x.52cc17a3.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://events.backtrace.io/api/summed-events/submit?universe=UNIVERSE&token=TOKEN - Status: 401"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/cart3x.3669d74a.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/sauce-pullover-1200x1500.51d7ffaf.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/red-tatt-1200x1500.30dadef4.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/bike-light-1200x1500.37c843b0.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/close@3x.a30a8a1d.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/filter3x.2943df5b.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/red-onesie-1200x1500.2ec615b2.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/bolt-shirt-1200x1500.c2599ac5.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/sauce-backpack-1200x1500.0a0b85a3.jpg - Status: 200"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Capturing screenshot: screenshots/login.png"}
+{"level":"info","message":"Screenshot saved at: screenshots/login.png"}
+{"level":"info","message":"Waiting for element: locator('#react-burger-menu-btn') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Clicked element: locator('#react-burger-menu-btn')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Waiting for element: locator('#logout_sidebar_link') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Clicked element: locator('#logout_sidebar_link')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/ - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/css/main.f6c64be5.chunk.css - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/js/main.018d2d1e.chunk.js - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/js/2.84a5cbf3.chunk.js - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500 - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.gstatic.com/s/dmmono/v14/aFTR7PB1QTsUX8KYvumzEYOtbQ.woff2 - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.gstatic.com/s/dmmono/v14/aFTU7PB1QTsUX8KYthqQBA.woff2 - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.gstatic.com/s/dmsans/v15/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2 - Status: 200"}
+{"level":"info","message":"Waiting for element: locator('#user-name') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Typed \"standard_user\" into element: locator('#user-name')"}
+{"level":"info","message":"Waiting for element: locator('#password') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Typed \"secret_sauce\" into element: locator('#password')"}
+{"level":"info","message":"Waiting for element: locator('#login-button') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/arrow3x.4b825b78.svg - Status: 200"}
+{"level":"info","message":"Clicked element: locator('#login-button')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/menu3x.52cc17a3.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/bike-light-1200x1500.37c843b0.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/sauce-backpack-1200x1500.0a0b85a3.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/sauce-pullover-1200x1500.51d7ffaf.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/close@3x.a30a8a1d.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/cart3x.3669d74a.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/red-tatt-1200x1500.30dadef4.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/filter3x.2943df5b.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/red-onesie-1200x1500.2ec615b2.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/bolt-shirt-1200x1500.c2599ac5.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://events.backtrace.io/api/unique-events/submit?universe=UNIVERSE&token=TOKEN - Status: 401"}
+{"level":"info","message":"Response URL: https://events.backtrace.io/api/summed-events/submit?universe=UNIVERSE&token=TOKEN - Status: 401"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Capturing screenshot: screenshots/login.png"}
+{"level":"info","message":"Screenshot saved at: screenshots/login.png"}
+{"level":"info","message":"Waiting for element: locator('#react-burger-menu-btn') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Clicked element: locator('#react-burger-menu-btn')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Waiting for element: locator('#logout_sidebar_link') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Clicked element: locator('#logout_sidebar_link')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/ - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/css/main.f6c64be5.chunk.css - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/js/main.018d2d1e.chunk.js - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500 - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/js/2.84a5cbf3.chunk.js - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.gstatic.com/s/dmmono/v14/aFTR7PB1QTsUX8KYvumzEYOtbQ.woff2 - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.gstatic.com/s/dmmono/v14/aFTU7PB1QTsUX8KYthqQBA.woff2 - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.gstatic.com/s/dmsans/v15/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2 - Status: 200"}
+{"level":"info","message":"Waiting for element: locator('#user-name') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Typed \"standard_user\" into element: locator('#user-name')"}
+{"level":"info","message":"Waiting for element: locator('#password') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Typed \"secret_sauce\" into element: locator('#password')"}
+{"level":"info","message":"Waiting for element: locator('#login-button') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/arrow3x.4b825b78.svg - Status: 200"}
+{"level":"info","message":"Clicked element: locator('#login-button')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/menu3x.52cc17a3.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/sauce-backpack-1200x1500.0a0b85a3.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/bike-light-1200x1500.37c843b0.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/bolt-shirt-1200x1500.c2599ac5.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/red-onesie-1200x1500.2ec615b2.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/filter3x.2943df5b.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/close@3x.a30a8a1d.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/cart3x.3669d74a.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/sauce-pullover-1200x1500.51d7ffaf.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/red-tatt-1200x1500.30dadef4.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://events.backtrace.io/api/summed-events/submit?universe=UNIVERSE&token=TOKEN - Status: 401"}
+{"level":"info","message":"Response URL: https://events.backtrace.io/api/unique-events/submit?universe=UNIVERSE&token=TOKEN - Status: 401"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Capturing screenshot: screenshots/login.png"}
+{"level":"info","message":"Screenshot saved at: screenshots/login.png"}
+{"level":"info","message":"Waiting for element: locator('#react-burger-menu-btn') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Clicked element: locator('#react-burger-menu-btn')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Waiting for element: locator('#logout_sidebar_link') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Clicked element: locator('#logout_sidebar_link')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/ - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/css/main.f6c64be5.chunk.css - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/js/main.018d2d1e.chunk.js - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500 - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/js/2.84a5cbf3.chunk.js - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.gstatic.com/s/dmmono/v14/aFTR7PB1QTsUX8KYvumzEYOtbQ.woff2 - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.gstatic.com/s/dmmono/v14/aFTU7PB1QTsUX8KYthqQBA.woff2 - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.gstatic.com/s/dmsans/v15/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2 - Status: 200"}
+{"level":"info","message":"Waiting for element: locator('#user-name') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Typed \"standard_user\" into element: locator('#user-name')"}
+{"level":"info","message":"Waiting for element: locator('#password') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Typed \"secret_sauce\" into element: locator('#password')"}
+{"level":"info","message":"Waiting for element: locator('#login-button') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Clicked element: locator('#login-button')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/close@3x.a30a8a1d.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/menu3x.52cc17a3.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/sauce-backpack-1200x1500.0a0b85a3.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/red-onesie-1200x1500.2ec615b2.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/bike-light-1200x1500.37c843b0.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/cart3x.3669d74a.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/red-tatt-1200x1500.30dadef4.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/filter3x.2943df5b.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/arrow3x.4b825b78.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/sauce-pullover-1200x1500.51d7ffaf.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/bolt-shirt-1200x1500.c2599ac5.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://events.backtrace.io/api/unique-events/submit?universe=UNIVERSE&token=TOKEN - Status: 401"}
+{"level":"info","message":"Response URL: https://events.backtrace.io/api/summed-events/submit?universe=UNIVERSE&token=TOKEN - Status: 401"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Capturing screenshot: screenshots/login.png"}
+{"level":"info","message":"Screenshot saved at: screenshots/login.png"}
+{"level":"info","message":"Waiting for element: locator('#react-burger-menu-btn') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Clicked element: locator('#react-burger-menu-btn')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Waiting for element: locator('#logout_sidebar_link') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Clicked element: locator('#logout_sidebar_link')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/ - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/css/main.f6c64be5.chunk.css - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/js/main.018d2d1e.chunk.js - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500 - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/js/2.84a5cbf3.chunk.js - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.gstatic.com/s/dmmono/v14/aFTU7PB1QTsUX8KYthqQBA.woff2 - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.gstatic.com/s/dmmono/v14/aFTR7PB1QTsUX8KYvumzEYOtbQ.woff2 - Status: 200"}
+{"level":"info","message":"Response URL: https://fonts.gstatic.com/s/dmsans/v15/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2 - Status: 200"}
+{"level":"info","message":"Waiting for element: locator('#user-name') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Typed \"standard_user\" into element: locator('#user-name')"}
+{"level":"info","message":"Waiting for element: locator('#password') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Typed \"secret_sauce\" into element: locator('#password')"}
+{"level":"info","message":"Waiting for element: locator('#login-button') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/arrow3x.4b825b78.svg - Status: 200"}
+{"level":"info","message":"Clicked element: locator('#login-button')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/bike-light-1200x1500.37c843b0.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/bolt-shirt-1200x1500.c2599ac5.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/close@3x.a30a8a1d.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/sauce-backpack-1200x1500.0a0b85a3.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/red-onesie-1200x1500.2ec615b2.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/cart3x.3669d74a.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/filter3x.2943df5b.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/red-tatt-1200x1500.30dadef4.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/sauce-pullover-1200x1500.51d7ffaf.jpg - Status: 200"}
+{"level":"info","message":"Response URL: https://www.saucedemo.com/static/media/menu3x.52cc17a3.svg - Status: 200"}
+{"level":"info","message":"Response URL: https://events.backtrace.io/api/unique-events/submit?universe=UNIVERSE&token=TOKEN - Status: 401"}
+{"level":"info","message":"Response URL: https://events.backtrace.io/api/summed-events/submit?universe=UNIVERSE&token=TOKEN - Status: 401"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Capturing screenshot: screenshots/login.png"}
+{"level":"info","message":"Screenshot saved at: screenshots/login.png"}
+{"level":"info","message":"Waiting for element: locator('#react-burger-menu-btn') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Clicked element: locator('#react-burger-menu-btn')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Waiting for element: locator('#logout_sidebar_link') to be visible"}
+{"level":"info","message":"Element is now visible"}
+{"level":"info","message":"Clicked element: locator('#logout_sidebar_link')"}
+{"level":"info","message":"Waiting for load state: networkidle"}
+{"level":"info","message":"Load state achieved: networkidle"}
+{"level":"info","message":"Waiting for load state: load"}
+{"level":"info","message":"Load state achieved: load"}
