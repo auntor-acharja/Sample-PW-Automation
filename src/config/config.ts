@@ -1,8 +1,9 @@
 import { config } from "dotenv";
 
+
 if (process.env.ENVIROMENT) {
   config({
-    path: `.env.${process.env.ENVIROMENT}`,
+    path: `.env.${process.env.ENVIROMENT.toLowerCase()}`,
     override: true,
   });
 } else {
