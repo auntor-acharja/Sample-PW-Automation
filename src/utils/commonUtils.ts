@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { Page } from "@playwright/test";
-import {logger} from "./logger";
+import { logger } from "./logger";
 
 export function loadJson(filePath: string): any | null {
   try {
@@ -29,4 +29,3 @@ export async function captureScreenshot(page: Page, screenshotPath: string): Pro
     logger.error("Error capturing screenshot:", error);
   }
 }
-

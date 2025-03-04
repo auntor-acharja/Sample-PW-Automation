@@ -103,12 +103,12 @@ npm run test:headed
 ```bash
 npx playwright test
 ```
+
 Run test on different Environment:
 
 ```bash
 npx cross-env ENVIRONMENT=uat npx playwright test
 ```
-
 
 ## Environment Setup
 

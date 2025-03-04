@@ -69,11 +69,10 @@ export async function waitForRequest(
 ): Promise<Request> {
   try {
     logger.info(`Waiting for request containing: ${partialUrl}`);
-    
-    const request = await page.waitForRequest(request => 
-      request.url().includes(partialUrl), 
-      { timeout }
-    );
+
+    const request = await page.waitForRequest((request) => request.url().includes(partialUrl), {
+      timeout,
+    });
 
     logger.info(`Request received: ${request.url()}`);
     return request;
@@ -90,11 +89,10 @@ export async function waitForResponse(
 ): Promise<Response> {
   try {
     logger.info(`Waiting for response containing: ${partialUrl}`);
-    
-    const response = await page.waitForResponse(response => 
-      response.url().includes(partialUrl), 
-      { timeout }
-    );
+
+    const response = await page.waitForResponse((response) => response.url().includes(partialUrl), {
+      timeout,
+    });
 
     logger.info(`Response received: ${response.url()}`);
     return response;
@@ -111,14 +109,13 @@ export async function waitForURL(
 ): Promise<void> {
   try {
     logger.info(`Waiting for URL containing: ${partialUrl}`);
-    await page.waitForURL(url => url.toString().includes(partialUrl), { timeout });
+    await page.waitForURL((url) => url.toString().includes(partialUrl), { timeout });
     logger.info(`URL loaded containing: ${partialUrl}`);
   } catch (error) {
     logger.error(`Error waiting for URL containing: ${partialUrl} - ${error}`);
     throw error;
   }
 }
-
 
 export async function waitForLocator(
   locator: Locator,

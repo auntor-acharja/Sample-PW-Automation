@@ -6,10 +6,8 @@ export class BasePage {
   private readonly TIME_OUT = 15000;
   protected page: Page;
 
-
   constructor(page: Page) {
     this.page = page;
-
   }
 
   async navigateTo(url: string): Promise<void> {

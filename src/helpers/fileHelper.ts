@@ -23,10 +23,7 @@ export async function downloadFile(
   savePath?: string
 ): Promise<string> {
   try {
-    const [download] = await Promise.all([
-      page.waitForEvent("download"),
-      downloadLocator.click(),
-    ]);
+    const [download] = await Promise.all([page.waitForEvent("download"), downloadLocator.click()]);
     const finalPath = savePath || path.join(DEFAULT_DOWNLOAD_PATH, download.suggestedFilename());
     await download.saveAs(finalPath);
 

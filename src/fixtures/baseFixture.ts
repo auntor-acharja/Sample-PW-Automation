@@ -14,17 +14,19 @@ type FixtureType = {
 };
 
 export const test = base.extend<FixtureType>({
-  loginPage: async ({ page }, use) => { 
+  loginPage: async ({ page }, use) => {
     await use(new LoginPage(page));
   },
   menu: async ({ page }, use) => {
     await use(new Menu(page));
   },
-  login: async ({ loginPage,page }, use) => {
+  login: async ({ loginPage, page }, use) => {
     try {
       await page.goto(environment.url);
-      await loginPage
-        .loginToApplication(environment.credentials.username, environment.credentials.password);
+      await loginPage.loginToApplication(
+        environment.credentials.username,
+        environment.credentials.password
+      );
     } catch (error) {
       logger.error("Initial login process failed:", error);
       throw error;

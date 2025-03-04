@@ -11,7 +11,6 @@ export class LoginPage extends BasePage {
   private dialogComponent: DialogComponent;
   private navbarComponent: NavbarComponent;
 
-
   constructor(page: Page) {
     super(page);
     this.username = this.page.locator("#user-name");
@@ -28,9 +27,9 @@ export class LoginPage extends BasePage {
   }
 
   async testLoginFn() {
-    await this.navbarComponent.clickHomePage() // For this page file we use navbarComponent just for example
-    await this.dialogComponent.confirm() // For this page file we use dialogComponent just for example
+    await this.navbarComponent.clickHomePage(); // For this page file we use navbarComponent just for example
+    await this.dialogComponent.confirm(); // For this page file we use dialogComponent just for example
     console.log("This is a test function");
-    await waitForLoadState(this.page,'load')
+    await waitForLoadState(this.page, "load");
   }
 }

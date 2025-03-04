@@ -1,8 +1,7 @@
 name: Playwright Tests
 
 on:
-
-# Run the workflow on a schedule. Use the following code to run workflow in a specific time
+  # Run the workflow on a schedule. Use the following code to run workflow in a specific time
   # schedule:
   #   - cron: '38 6 * * *'
   workflow_dispatch:
@@ -25,24 +24,23 @@ on:
           - "Yes"
           - "No"
 
-
   push:
     branches:
       - main
 
 # Give the workflow permission to deploy the Pages site
 permissions:
-  contents: read  
-  pages: write      
-  id-token: write 
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.49.1-noble   # If we update playwright version in project, the PW docker image version need to update accordingly.
-    
+      image: mcr.microsoft.com/playwright:v1.49.1-noble # If we update playwright version in project, the PW docker image version need to update accordingly.
+
     environment: ${{ github.event.inputs.ENVIRONMENT || 'staging' }}
     steps:
       - name: Checkout code
@@ -52,14 +50,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
-          
+
       - name: Generate .env file
         run: |
           echo "URL=${{ secrets.URL }}" >> .env
           echo "USERNAME=${{ secrets.USERNAME }}" >> .env
           echo "PASSWORD=\"${{ secrets.PASSWORD }}\"" >> .env
 
-# Use the following code to cache Node.js modules and Playwright browsers
+      # Use the following code to cache Node.js modules and Playwright browsers
       # - name: Cache Node.js modules
       #   uses: actions/cache@v3
       #   with:
@@ -78,8 +76,8 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        
-# As we are using the Playwright Docker image, we don't need to install the browsers, if we use the cache, we can uncomment this step
+
+      # As we are using the Playwright Docker image, we don't need to install the browsers, if we use the cache, we can uncomment this step
       # - name: Install Playwright Browsers
       #   run: npx playwright install --with-deps
 
