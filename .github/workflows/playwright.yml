@@ -88,8 +88,8 @@ jobs:
 
       - name: Install Microsoft Edge #PW Docker image doesn't contains Microsoft Edge, so we need to install it
         run: |
-          npx playwright install msedge
-          npx playwright install-deps
+          sudo npx playwright install msedge
+          sudo npx playwright install-deps
 
       # As we are using the Playwright Docker image, we don't need to install the browsers, if we use the cache, we can uncomment this step
       # - name: Install Playwright Browsers
