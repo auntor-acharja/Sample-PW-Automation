@@ -49,6 +49,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.51.1-noble # If we update playwright version in project, the PW docker image version need to update accordingly.
+      options: --user root
     environment: ${{ github.event.inputs.ENVIRONMENT || 'staging' }}
     steps:
       - name: Checkout code
@@ -97,10 +98,6 @@ jobs:
       - name: Setup the Test Command
         id: test-command
         run: |
-          # Fix Firefox crash in GitHub Actions
-          # Details: https://github.com/microsoft/playwright/issues/6500#issuecomment-838515115
-          export HOME=/root
-
           TEST_TAGS=$(echo "${{ github.event.inputs.TEST_TYPE }}" | tr ',' ' ')
           BROWSERS=$(echo "${{ github.event.inputs.BROWSERS }}" | tr ',' ' ')
 
