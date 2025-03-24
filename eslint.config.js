@@ -6,7 +6,7 @@ import playwright from "eslint-plugin-playwright";
 
 export default [
   {
-    ignores: ["node_modules", "playwright-report","logs","screenshots","test-results"],
+    ignores: ["node_modules", "playwright-report", "logs", "screenshots", "test-results"],
   },
   {
     ...playwright.configs["flat/recommended"],

@@ -1,5 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 import { BasePage } from "../basePage";
+import { click } from "../../helpers/actionHelper";
 
 export class Menu extends BasePage {
   private menuButton: Locator;
@@ -12,10 +13,10 @@ export class Menu extends BasePage {
   }
 
   async openMenu(): Promise<void> {
-    await this.click(this.menuButton);
+    await click(this.menuButton);
   }
   async logout(): Promise<void> {
     await this.openMenu();
-    await this.click(this.logoutLink);
+    await click(this.logoutLink);
   }
 }

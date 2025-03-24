@@ -1,9 +1,9 @@
 import { Page, Locator } from "@playwright/test";
 import { logger } from "../utils/logger";
 import { waitForLoadState } from "../helpers/waitHelper";
+import { click } from "../helpers/actionHelper";
 
 export class BasePage {
-  private readonly TIME_OUT = 15000;
   protected page: Page;
 
   constructor(page: Page) {
@@ -18,6 +18,32 @@ export class BasePage {
       await waitForLoadState(this.page, "load");
     } catch (error) {
       logger.error(`Failed to navigate to URL: ${url}`, error);
+      throw error;
+    }
+  }
+
+  async getNewPopupPage(buttonSelector: Locator): Promise<Page> {
+    try {
+      const [newPage] = await Promise.all([
+        this.page.waitForEvent("popup"),
+        await click(buttonSelector),
+      ]);
+      logger.info(`New popup page opened`);
+      return newPage;
+    } catch (error) {
+      logger.error(`Error while handling new popup page: ${error}`);
+      throw error;
+    }
+  }
+
+  async pageReload(): Promise<void> {
+    try {
+      await this.page.reload();
+      logger.info(`Reloaded the page`);
+      // await waitForLoadState(this.page, "networkidle");
+      await waitForLoadState(this.page, "load");
+    } catch (error) {
+      logger.error(`Failed to reload the page`, error);
       throw error;
     }
   }
@@ -46,48 +72,13 @@ export class BasePage {
     }
   }
 
-  async waitForVisible(locator: Locator, timeout: number = this.TIME_OUT): Promise<void> {
+  async getURL(): Promise<string> {
     try {
-      logger.info(`Waiting for element: ${locator} to be visible`);
-      await locator.waitFor({ state: "visible", timeout });
-      logger.info(`Element is now visible`);
+      const url = this.page.url();
+      logger.info(`URL is: "${url}"`);
+      return url;
     } catch (error) {
-      logger.error(`Element did not become visible: ${locator}`, error);
-      throw error;
-    }
-  }
-
-  async click(locator: Locator): Promise<void> {
-    try {
-      await this.waitForVisible(locator);
-      await locator.click();
-      logger.info(`Clicked element: ${locator}`);
-      await waitForLoadState(this.page, "networkidle");
-      await waitForLoadState(this.page, "load");
-    } catch (error) {
-      logger.error(`Failed to click element: ${locator}`, error);
-      throw error;
-    }
-  }
-
-  async type(locator: Locator, text: string): Promise<void> {
-    try {
-      await this.waitForVisible(locator);
-      await locator.fill(text);
-      logger.info(`Typed "${text}" into element: ${locator}`);
-    } catch (error) {
-      logger.error(`Failed to type into element: ${locator}`, error);
-      throw error;
-    }
-  }
-
-  async clear(locator: Locator): Promise<void> {
-    try {
-      await this.waitForVisible(locator);
-      await locator.clear();
-      logger.info(`Cleared input element: ${locator}`);
-    } catch (error) {
-      logger.error(`Failed to clear input element: ${locator}`, error);
+      logger.error(`Failed to retrieve URL`, error);
       throw error;
     }
   }
@@ -99,95 +90,6 @@ export class BasePage {
       return title;
     } catch (error) {
       logger.error(`Failed to retrieve page title`, error);
-      throw error;
-    }
-  }
-
-  async getText(locator: Locator): Promise<string> {
-    try {
-      await this.waitForVisible(locator);
-      const text = (await locator.textContent()) || "";
-      logger.info(`Text extracted: "${text}"`);
-      return text;
-    } catch (error) {
-      logger.error(`Failed to get text from element: ${locator}`, error);
-      throw error;
-    }
-  }
-
-  async getInnerText(locator: Locator): Promise<string> {
-    try {
-      const text = await locator.innerText();
-      logger.info(`Inner text: "${text}"`);
-      return text;
-    } catch (error) {
-      logger.error(`Failed to get inner text from element: ${locator}`, error);
-      throw error;
-    }
-  }
-
-  async getInputValue(locator: Locator): Promise<string> {
-    try {
-      const value = await locator.inputValue();
-      logger.info(`Input value: "${value}"`);
-      return value;
-    } catch (error) {
-      logger.error(`Failed to get input value from element: ${locator}`, error);
-      throw error;
-    }
-  }
-
-  async isVisible(locator: Locator): Promise<boolean> {
-    try {
-      const isVisible = await locator.isVisible();
-      logger.info(`Element: ${locator} is ${isVisible ? "visible" : "not visible"}`);
-      return isVisible;
-    } catch (error) {
-      logger.error(`Failed to check visibility of element: ${locator}`, error);
-      throw error;
-    }
-  }
-
-  async isHidden(locator: Locator): Promise<boolean> {
-    try {
-      const isHidden = await locator.isHidden();
-      logger.info(`Element: ${locator} is ${isHidden ? "hidden" : "not hidden"}`);
-      return isHidden;
-    } catch (error) {
-      logger.error(`Failed to check if element is hidden: ${locator}`, error);
-      throw error;
-    }
-  }
-
-  async isDisabled(locator: Locator): Promise<boolean> {
-    try {
-      const isDisabled = await locator.isDisabled();
-      logger.info(`Element: ${locator} is ${isDisabled ? "disabled" : "not disabled"}`);
-      return isDisabled;
-    } catch (error) {
-      logger.error(`Failed to check if element is disabled: ${locator}`, error);
-      throw error;
-    }
-  }
-
-  async isEnabled(locator: Locator): Promise<boolean> {
-    try {
-      const isEnabled = await locator.isEnabled();
-      logger.info(`Element: ${locator} is ${isEnabled ? "enabled" : "not enabled"}`);
-      return isEnabled;
-    } catch (error) {
-      logger.error(`Failed to check if element is enabled: ${locator}`, error);
-      throw error;
-    }
-  }
-
-  async isChecked(locator: Locator): Promise<boolean> {
-    try {
-      const isChecked = await locator.isChecked();
-      logger.info(`Element: ${locator} is ${isChecked ? "checked" : "not checked"}`);
-      return isChecked;
-    } catch (error) {
-      logger.error(`Failed to check if element is checked: ${locator}`, error);
       throw error;
     }
   }

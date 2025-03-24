@@ -1,5 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 import { BasePage } from "./basePage";
+import { isElementVisible } from "../helpers/elementsHelper";
 
 export class ProductPage extends BasePage {
   private productTitle: Locator;
@@ -10,6 +11,6 @@ export class ProductPage extends BasePage {
   }
 
   async isProductTitleVisible(): Promise<boolean> {
-    return await this.isVisible(this.productTitle);
+    return await isElementVisible(this.productTitle);
   }
 }

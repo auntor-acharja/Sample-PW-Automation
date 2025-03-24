@@ -7,7 +7,7 @@ test.describe("Example 1 Tests", () => {
     // network and login fixtures are defined in baseFixture.ts, they will auto call before each test
     console.log("Running before each test...");
   });
-  test.fail.only(
+  test(
     "TC1: Verify login and logout functionality",
     { tag: "@smoke" },
     async ({ loginPage, menu, saveScreenshot }) => {

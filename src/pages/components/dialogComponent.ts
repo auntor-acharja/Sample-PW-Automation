@@ -1,5 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 import { BasePage } from "../basePage";
+import { getText } from "../../helpers/elementsHelper";
 export class DialogComponent extends BasePage {
   private alertMessage: Locator;
   constructor(page: Page) {
@@ -16,6 +17,6 @@ export class DialogComponent extends BasePage {
   }
 
   async getAlertMessage() {
-    return await this.getText(this.alertMessage);
+    return await getText(this.alertMessage);
   }
 }

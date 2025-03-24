@@ -3,27 +3,28 @@ import { BasePage } from "./basePage";
 import { waitForLoadState } from "../helpers/waitHelper";
 import { DialogComponent } from "./components/dialogComponent";
 import { NavbarComponent } from "./components/navbarComponent";
+import { click, type } from "../helpers/actionHelper";
 
 export class LoginPage extends BasePage {
   private username: Locator;
   private loginButton: Locator;
   private password: Locator;
-  private dialogComponent: DialogComponent;
-  private navbarComponent: NavbarComponent;
+  readonly dialogComponent: DialogComponent;
+  readonly navbarComponent: NavbarComponent;
 
   constructor(page: Page) {
     super(page);
-    this.username = this.page.locator("#user-name");
-    this.password = this.page.locator("#password");
-    this.loginButton = this.page.locator("#login-button");
+    this.username = page.locator("#user-name");
+    this.password = page.locator("#password");
+    this.loginButton = page.locator("#login-button");
     this.dialogComponent = new DialogComponent(page);
     this.navbarComponent = new NavbarComponent(page);
   }
 
   async loginToApplication(username: string, pass: string): Promise<void> {
-    await this.type(this.username, username);
-    await this.type(this.password, pass);
-    await this.click(this.loginButton);
+    await type(this.username, username);
+    await type(this.password, pass);
+    await click(this.loginButton);
   }
 
   async testLoginFn() {

@@ -1389,3 +1389,5 @@
 {"level":"info","message":"Load state achieved: networkidle"}
 {"level":"info","message":"Waiting for load state: load"}
 {"level":"info","message":"Load state achieved: load"}
+{"level":"info","message":"Directory created: C:\\Others\\Sample-PW-Automation\\test-data\\downloadFiles"}
+{"level":"info","message":"Directory created: C:\\Others\\Sample-PW-Automation\\test-data\\uploadFiles"}

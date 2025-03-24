@@ -24,6 +24,16 @@ on:
           - "Yes"
           - "No"
 
+      TEST_TYPE:
+        description: "Select test types (comma-separated)"
+        required: true
+        default: "smoke,regression,functional"
+
+      BROWSERS:
+        description: "Select browsers (comma-separated)"
+        required: true
+        default: "chrome,firefox,webkit"
+
   push:
     branches:
       - main
@@ -35,12 +45,10 @@ permissions:
   id-token: write
 
 jobs:
-  test:
-    timeout-minutes: 60
+  PW-test:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.49.1-noble # If we update playwright version in project, the PW docker image version need to update accordingly.
-
+      image: mcr.microsoft.com/playwright:v1.51.1-noble # If we update playwright version in project, the PW docker image version need to update accordingly.
     environment: ${{ github.event.inputs.ENVIRONMENT || 'staging' }}
     steps:
       - name: Checkout code
@@ -50,6 +58,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
+
+      - name: Install Microsoft Edge #PW Docker image doesn't contains Microsoft Edge, so we need to install it
+        run: |
+          npx playwright install msedge
+          npx playwright install-deps
 
       - name: Generate .env file
         run: |
@@ -84,11 +97,26 @@ jobs:
       - name: Setup the Test Command
         id: test-command
         run: |
+          TEST_TAGS=$(echo "${{ github.event.inputs.TEST_TYPE }}" | tr ',' ' ')
+          BROWSERS=$(echo "${{ github.event.inputs.BROWSERS }}" | tr ',' ' ')
+
+          CMD="npx playwright test"
+
           if [ "${{ github.event.inputs.RUN_LAST_FAILED_TEST }}" = "Yes" ]; then
-            echo "COMMAND=npx playwright test --last-failed" >> $GITHUB_ENV
-          else
-            echo "COMMAND=npx playwright test" >> $GITHUB_ENV
+            CMD="$CMD --last-failed"
           fi
+
+          # Add test type filters
+          for TAG in $TEST_TAGS; do
+            CMD="$CMD --grep @$TAG"
+          done
+
+          # Add browser filters
+          for BROWSER in $BROWSERS; do
+            CMD="$CMD --project=$BROWSER"
+          done
+
+          echo "COMMAND=$CMD" >> $GITHUB_ENV
 
       - name: Run Playwright tests
         run: $COMMAND
@@ -113,7 +141,7 @@ jobs:
   # Deploy Playwright report to GitHub Pages
   deploy:
     if: always()
-    needs: test
+    needs: PW-test
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

@@ -1,7 +1,18 @@
 import { Page, Locator, Response, Request } from "@playwright/test";
 import { logger } from "../utils/logger";
 
-const TIME_OUT = 15000;
+const TIME_OUT = 45000;
+
+export async function waitForVisible(locator: Locator, timeout: number = TIME_OUT): Promise<void> {
+  try {
+    logger.info(`Waiting for element: ${locator} to be visible`);
+    await locator.waitFor({ state: "visible", timeout });
+    logger.info(`Element is now visible`);
+  } catch (error) {
+    logger.error(`Element did not become visible: ${locator}`, error);
+    throw error;
+  }
+}
 
 export async function waitForSelector(
   page: Page,
