@@ -83,7 +83,7 @@ jobs:
       #     restore-keys: |
       #       ${{ runner.os }}-playwright-browsers-
 
-      - name: Set HOME environment variable for Firefox
+      - name: Set HOME environment variable for Firefox #Issue Ref: https://github.com/microsoft/playwright/issues/27620
         run: |
           echo "HOME=/root" >> $GITHUB_ENV
 
