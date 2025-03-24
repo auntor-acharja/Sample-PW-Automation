@@ -49,7 +49,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.51.1-noble # If we update playwright version in project, the PW docker image version need to update accordingly.
-      options: --user 1001
+      options: --user root
     environment: ${{ github.event.inputs.ENVIRONMENT || 'staging' }}
     steps:
       - name: Checkout code
