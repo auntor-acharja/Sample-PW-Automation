@@ -83,6 +83,10 @@ jobs:
       #     restore-keys: |
       #       ${{ runner.os }}-playwright-browsers-
 
+      - name: Set HOME environment variable for Firefox
+        run: |
+          echo "HOME=/root" >> $GITHUB_ENV
+
       - name: Install dependencies
         run: npm ci
 
