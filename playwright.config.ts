@@ -13,28 +13,28 @@ export default defineConfig({
     headless: process.env.CI ? true : false,
   },
   projects: [
-    {
-      name: "edge",
-      use: { ...devices["Desktop Edge"], channel: "msedge" },
-    },
+    // {
+    //   name: "edge",
+    //   use: { ...devices["Desktop Edge"], channel: "msedge" },
+    // },
 
     {
       name: "chrome",
       use: { ...devices["Desktop Chrome"] },
     },
 
-    {
-      name: "firefox",
-      use: {
-        ...devices["Desktop Firefox"],
-      },
-    },
+    // {
+    //   name: "firefox",
+    //   use: {
+    //     ...devices["Desktop Firefox"],
+    //   },
+    // },
 
-    {
-      name: "webkit",
-      use: {
-        ...devices["Desktop Safari"],
-      },
-    },
+    // {
+    //   name: "webkit",
+    //   use: {
+    //     ...devices["Desktop Safari"],
+    //   },
+    // },
   ],
 });
