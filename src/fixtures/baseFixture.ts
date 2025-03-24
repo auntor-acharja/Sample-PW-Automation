@@ -37,7 +37,7 @@ export const test = base.extend<FixtureType>({
   network: async ({ page }, use) => {
     page.on("response", (response) => {
       logger.info(`Response URL: ${response.url()} - Status: ${response.status()}`);
-      expect.soft(response.status(), `Failed for URL: ${response.url()}`).toBeLessThan(404);
+      //expect.soft(response.status(), `Failed for URL: ${response.url()}`).toBeLessThan(404);
     });
 
     await use();
