@@ -32,7 +32,7 @@ on:
       BROWSERS:
         description: "Select browsers (comma-separated)"
         required: true
-        default: "chrome,firefox,webkit"
+        default: "edge,chrome,firefox,webkit"
 
   push:
     branches:
@@ -84,6 +84,10 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        env:
+          # Fix Firefox crash in GitHub Actions
+          # Details: https://github.com/microsoft/playwright/issues/6500#issuecomment-838515115
+          HOME: /root
 
       - name: Install Microsoft Edge #PW Docker image doesn't contains Microsoft Edge, so we need to install it
         run: |
